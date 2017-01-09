@@ -112,6 +112,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gralloc.exynos5
 
+PRODUCT_PACKAGES += \
+    libion \
+    libfimg
+
+# Samsung service mode
+PRODUCT_PACKAGES += \
+    SamsungServiceMode
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \

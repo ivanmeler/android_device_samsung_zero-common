@@ -27,6 +27,7 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
+TARGET_CPU_CORTEX_A53 := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
@@ -47,6 +48,7 @@ BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := universal7420
@@ -56,6 +58,10 @@ TARGET_NO_BOOTLOADER := true
 BACKLIGHT_PATH := /sys/devices/13900000.dsim/backlight/panel/brightness
 BOARD_BATTERY_DEVICE_NAME := battery
 BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
+RED_LED_PATH := "/sys/class/leds/led_r/brightness"
+GREEN_LED_PATH := "/sys/class/leds/led_g/brightness"
+BLUE_LED_PATH := "/sys/class/leds/led_b/brightness"
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 CHARGING_ENABLED_PATH := "/sys/class/power_supply/battery/batt_lp_charging"
 
@@ -81,8 +87,12 @@ NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 BOARD_USES_SCALER := true
 BOARD_USES_DT := true
 
+# Virtual Display
+BOARD_USES_VIRTUAL_DISPLAY := true
+
 # Hardware
 BOARD_HARDWARE_CLASS += device/samsung/zero-common/cmhw
+BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := true
@@ -114,7 +124,16 @@ COMMON_GLOBAL_CFLAGS += -DUSE_NATIVE_SEC_NV12TILED
 
 # OpenMAX video
 BOARD_USE_DMA_BUF := true
+BOARD_USE_STOREMETADATA := true
 BOARD_USE_METADATABUFFERTYPE := true
+BOARD_USE_ANB_OUTBUF_SHARE := true
+BOARD_USE_IMPROVED_BUFFER := true
+BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
+BOARD_USE_GSC_RGB_ENCODER := true
+BOARD_USE_CSC_HW := false
+BOARD_USE_QOS_CTRL := false
+BOARD_USE_S3D_SUPPORT := true
+BOARD_USE_VP8ENC_SUPPORT := true
 
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
