@@ -96,7 +96,12 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+   camera.universal7420
+
+# Camera
+PRODUCT_PACKAGES += \
+    Camera2
+#    Snap
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -109,8 +114,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/lhd.conf:system/etc/lhd.conf
 
 # Graphics
-PRODUCT_PACKAGES += \
-    gralloc.exynos5
+#PRODUCT_PACKAGES += \
+#    gralloc.exynos5
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -167,7 +172,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.sec_hal=true \
     wifi.interface=wlan0 \
     debug.hwc.force_gpu=1 \
-    ro.bq.gpu_to_cpu_unsupported=1
+    ro.bq.gpu_to_cpu_unsupported=1 \
+    ro.bq.gpu_to_cpu_unsupported=1 \
+    persist.camera.HAL3.enabled=1
 
 # Radio
 PRODUCT_PACKAGES += \
